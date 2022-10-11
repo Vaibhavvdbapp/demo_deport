@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
     protect_from_forgery
-    before_action :authenticate_user!,:only => [:create, :update, :destroy]
+    before_action :authenticate_user!
     private
         def current_cart
             Cart.find(session[:cart_id])
