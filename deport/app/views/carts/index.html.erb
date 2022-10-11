@@ -4,10 +4,15 @@
 
 <div id="carts">
   <% @carts.each do |cart| %>
+
+    <% if cart.total_price>=1 %>
     <%= render cart %>
     <p>
       <%= link_to "Show this cart", cart %>
     </p>
+    <% else %>
+    <% end %>
+    
   <% end %>
 </div>
 
