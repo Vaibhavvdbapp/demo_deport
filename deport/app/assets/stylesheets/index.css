@@ -1,0 +1,41 @@
+hr {
+  border:none;
+  border-top:2px dashed rebeccapurple;
+  color:#fff;
+  background-color:#fff;
+  height:1px;
+  width:50%;
+  }
+table, th, td {
+    border: 1px solid black;
+    border-radius: 10px;
+    border-width: 2px;
+  }
+table,div
+{
+  text-align: center;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+img
+{
+    height: 3cm;
+    width: auto;
+}
+dl
+{
+  white-space: nowrap;
+}
+dd
+{
+  word-wrap: break-word;
+}
+
+.list_line_even {
+  background: #e0f8f8;
+}
+.list_line_odd {
+  background: #9c9;
+}

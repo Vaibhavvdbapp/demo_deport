@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Pragprog Books Online Store</title>
+  <%= stylesheet_link_tag "depot", :media => "all" %>
+  <script src="../line_items/create.js.rjs"></script>
+  <%= csrf_meta_tag %>
+</head>
+
+<body id="store">
+  <div id="banner">
+    <%= @page_title || "Pragmatic Bookshelf" %>
+  </div>
+  <div id="columns">
+    <div id="side">
+      <div id="cart">
+        <!-- 152 -->
+        <% if @cart%>
+        <%= render @cart %>
+        <% end %>
+      </div>
+      <br />
+      <a href="http://www....">Home</a><br />
+      <a href="http://www..../faq">Questions</a><br />
+      <a href="http://www..../news">News</a><br />
+      <a href="http://www..../contact">Contact</a><br />
+
+      <% if user_signed_in? %>
+        <br />
+          <%= link_to 'Orders', orders_path %> <br />
+          <%= link_to 'Products', products_path %> <br />
+          <%= link_to 'Users', users_path %> <br />
+        <br />
+        <%= button_to "Sign Out", destroy_user_session_path, method: :delete %>
+        <% end %>
+    </div>
+    
+    <div id="main">
+      <% if alert %>
+      <p class="alert alert-danger"><%= alert %></p>
+      <% end %>
+ 
+      <%= yield %>
+    </div>
+  </div>
+</body>
+
+</html>
